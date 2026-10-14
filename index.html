@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For you, my love</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fbf3ed;color:#503a3f;font-family:Georgia,serif;min-height:100vh;background-image:radial-gradient(#d9aca833 1px,transparent 1px);background-size:22px 22px}main{max-width:760px;margin:auto;padding:50px 22px 36px}header{text-align:center}.eyebrow{font:11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#99726e}.heart{font-size:40px;color:#ad4d61;margin:24px 0;animation:pulse 3s infinite}h1{font-weight:normal;font-size:clamp(42px,8vw,64px);line-height:1.1;margin:14px 0}header p{color:#937773;font-style:italic;font-size:18px}button{border:0;border-radius:30px;padding:16px 27px;background:#91475b;color:white;font:14px Arial,sans-serif;cursor:pointer;box-shadow:0 7px 20px #91475b22}button:hover{background:#763a4a}button:focus-visible{outline:3px solid #503a3f;outline-offset:5px}.envelope{text-align:center;padding:45px 15px}.envelope-icon{font-size:75px;display:block;margin-bottom:24px}.letter{background:#fffdf9;border:1px solid #eadbd0;padding:clamp(24px,6vw,55px);box-shadow:0 16px 50px #70534c0c;position:relative;margin-top:35px}.letter:before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:#b66c78}h2{font-weight:normal;font-size:29px;margin-top:0}.letter p{font-size:18px;line-height:1.9}.signature{font-style:italic;color:#91475b}.reminders{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:30px 0}.reminders span{border:1px solid #e5cec7;border-radius:25px;padding:11px 17px;font:12px Arial,sans-serif;color:#92666c}.extra{text-align:center;margin-top:30px}.note{font-style:italic;min-height:50px;line-height:1.7;color:#91475b}footer{text-align:center;font:10px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;margin-top:38px;color:#a18580}[hidden]{display:none!important}@keyframes pulse{50%{transform:scale(1.12)}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">A little letter, just for you</div><div class="heart" aria-hidden="true">♥</div><h1>You've got this,<br>baby.</h1><p>A little courage. A lot of love.</p></header>
+<section class="envelope" id="envelope"><span class="envelope-icon" aria-hidden="true">💌</span><button id="open" aria-expanded="false" aria-controls="letter">Open your love letter ♡</button></section>
+<article class="letter" id="letter" hidden tabindex="-1"><h2>My love,</h2>
+<p>Before your exam, I want you to pause for a moment and remember this: I believe in you. I see the effort you've put in, the things you've learned, and the courage it takes to keep going even when you're nervous.</p>
+<p>Please take care of yourself, okay? Eat well, drink some water, and give yourself time to rest. You deserve the same kindness you give to everyone around you.</p>
+<p>Be brave, my love. Being brave doesn't mean you can't feel scared. It means taking a deep breath and trying anyway. When you sit down for your exam, take it one question at a time. You can do this.</p>
+<p>Whatever the result, it will never change how much you mean to me. I'm already proud of you, and I'll be cheering for you every step of the way.</p>
+<p>Go show that exam what you've got. And when it's over, let yourself breathe. You've earned a little peace — and a big hug.</p>
+<p class="signature">Always on your side,<br>Yciane ♥</p></article>
+<div class="reminders"><span>Eat something good</span><span>Take a deep breath</span><span>Believe in yourself</span></div>
+<section class="extra" id="extra" hidden><button id="courage">One more little reminder ♡</button><p class="note" id="note" aria-live="polite">You don't have to be perfect to make me proud.</p></section>
+<footer>Made with love · always cheering for you</footer>
+</main><script>
+const openButton=document.getElementById('open');
+openButton.addEventListener('click',()=>{document.getElementById('letter').hidden=false;document.getElementById('extra').hidden=false;openButton.setAttribute('aria-expanded','true');document.getElementById('envelope').hidden=true;document.getElementById('letter').focus({preventScroll:true});});
+const notes=["One question at a time, love. You've got this.","Take a breath. Relax your shoulders. I believe in you.","Your exam result doesn't define how wonderful you are.","Be brave, be kind to yourself, and keep going.","Remember to eat well and rest. You're precious to me."];
+let next=0;document.getElementById('courage').addEventListener('click',()=>{document.getElementById('note').textContent=notes[next];next=(next+1)%notes.length;});
+</script></body></html>
